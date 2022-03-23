@@ -12,7 +12,7 @@ stages {
 
       // Get some code from a GitHub repository
 
-   //  git 'https://github.com/raknas999/GOL-Repo.git'
+   //  git 'https://github.com/suraj-github-repo/GOL-Repo.git'
 
       // Get the Maven tool.
      
@@ -62,9 +62,9 @@ stages {
  }
     stage('Deploy War') {
       steps {
-          //deploy adapters: [tomcat8(credentialsId: 'tomcat-cred', path: '', url: 'http://18.220.134.203:8080/')], contextPath: null, war: '**/*.war'
-          sh label: '', script: 'ansible-playbook deploy-withinfra.yml'
-          //sh label: '', script: 'ansible-playbook deploy.yml'
+          //deploy adapters: [tomcat8(credentialsId: 'tomcat-cred', path: '', url: 'http://3.110.147.211:8080/')], contextPath: null, war: '**/*.war'
+          //sh label: '', script: 'ansible-playbook deploy-withinfra.yml'
+          sh label: '', script: 'ansible-playbook deploy.yml'
       }
  }
 }
@@ -73,7 +73,7 @@ post {
             archiveArtifacts 'gameoflife-web/target/*.war'
         }
         failure {
-            mail to:"raknas000@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Build failed"
+            mail to:"meshrams063@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Build failed"
         }
     }       
 }
