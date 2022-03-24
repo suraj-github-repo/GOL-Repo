@@ -62,9 +62,9 @@ stages {
  }
     stage('Deploy War') {
       steps {
-          //deploy adapters: [tomcat8(credentialsId: 'tomcat-cred', path: '', url: 'http://3.110.147.211:8080/')], contextPath: null, war: '**/*.war'
-          //sh label: '', script: 'ansible-playbook deploy-withinfra.yml'
-          sh label: '', script: 'ansible-playbook deploy.yml'
+          //deploy adapters: [tomcat8(credentialsId: 'tomcat-cred', path: '', url: 'http://65.0.91.16:8080//')], contextPath: null, war: '**/*.war'
+          sh label: '', script: 'ansible-playbook deploy-withinfra.yml'
+          //sh label: '', script: 'ansible-playbook deploy.yml'
       }
  }
 }
