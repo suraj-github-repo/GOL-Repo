@@ -19,9 +19,9 @@
   - name: launching ec2 instance
     ec2:
       instance_type: t2.micro
-      key_name: sankar-devops
+      key_name: suraj.devops
       image: ami-0c78cdf6791bffb6f
-      region: us-east-2
+      region: ap-south-1
       group: launch-wizard-25
       count: 1
       wait: yes
