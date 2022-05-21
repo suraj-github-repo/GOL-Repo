@@ -1,6 +1,6 @@
 build:
   api:
-    context: api
+    context: okteto
   frontend:
     context: frontend
     dockerfile: Dockerfile
@@ -14,7 +14,7 @@ dev:
       - 8080:8080
       - 9229:9229
     sync:
-      - api:/usr/src/app
+      - okteto:/usr/src/app
   frontend:
     command: yarn start
     sync:
